@@ -7,7 +7,9 @@
 
 body {
   background-color: #e3e3e3;
+  cursor: default;
 }
+
 .text-input {
   padding: 10px 30px;
   border-radius: 100px;
@@ -18,4 +20,22 @@ body {
 
 .icon {
   font-size: 28px;
+}
+
+.button {
+  padding: 10px 30px;
+  font-size: 18px;
+  outline: none;
+  border-radius: 100px;
+  color: #e3e3e3;
+  border: 1px solid #0d0d0d;
+  background-color: #0d0d0d;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.button:active {
+  color: #0d0d0d;
+  border: 1px solid #0d0d0d;
+  background-color: transparent;
 }
