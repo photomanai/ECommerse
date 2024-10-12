@@ -6,10 +6,13 @@ import Product from "./Product";
 
 function ProductList() {
   const dispatch = useDispatch();
+
   const { products } = useSelector((store) => store.product);
+
   useEffect(() => {
     dispatch(getAllProducts());
   }, []);
+
   return (
     <div className="productlist-c">
       {products &&

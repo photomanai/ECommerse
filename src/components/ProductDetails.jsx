@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { setSelectedProduct } from "../redux/slices/productSlice";
+import {
+  getAllProducts,
+  getSelectedProduct,
+  setSelectedProduct,
+} from "../redux/slices/productSlice";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 
 function ProductDetails() {
+  const { id } = useParams();
+
   const { products, selectedProduct } = useSelector((store) => store.product);
 
   const { price, image, title, description } = selectedProduct;
 
   const [count, setCount] = useState(0);
 
-  const dispach = useDispatch();
+  const dispatch = useDispatch();
 
   const increment = () => {
     setCount((prev) => prev + 1);
@@ -21,18 +27,19 @@ function ProductDetails() {
   };
 
   useEffect(() => {
-    getProductById();
+    // dispatch(getAllProducts());
+    dispatch(getSelectedProduct(id));
+    // getProductById();
   }, []);
 
-  const getProductById = () => {
-    products &&
-      products.map((product) => {
-        if (product.id == id) {
-          dispach(setSelectedProduct(product));
-        }
-      });
-  };
-  const { id } = useParams();
+  // const getProductById = () => {
+  //   products &&
+  //     products.map((product) => {
+  //       if (product.id == id) {
+  //         dispatch(getSelectedProduct(id));
+  //       }
+  //     });
+  // };
 
   return (
     <div className="productdetails-c">
