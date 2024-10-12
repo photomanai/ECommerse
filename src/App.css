@@ -1,0 +1,14 @@
+.header-m {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  background-color: #e3e3e3;
+}
+
+.header-r-c {
+  width: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
