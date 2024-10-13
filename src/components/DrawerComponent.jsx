@@ -22,16 +22,20 @@ function DrawerComponent() {
         }}
         open={drawer}
       >
+        <h1 className="drawecomponent-h">Cast</h1>
         <div className="basketproductlist-c">
-          {products &&
+          {products.length != 0 ? (
             products.map((product) => (
               <BasketProduct key={product.id} product={product} />
-            ))}
+            ))
+          ) : (
+            <h1 className="basketproductlist-empty-c">There is empty</h1>
+          )}
         </div>
         <div className="basketproductlist-f-c">
           <div className="basketproductlist-amount-c">
             Total Amount:
-            <h2>{amount}</h2>
+            <h2>{amount.toFixed(2)}</h2>
           </div>
           <button className="button">Buy</button>
         </div>

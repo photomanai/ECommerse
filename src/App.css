@@ -132,3 +132,11 @@
 .basketproduct-t-c p:nth-child(1) {
   font-weight: bold;
 }
+
+.drawecomponent-h {
+  margin: 20px;
+}
+
+.basketproductlist-empty-c {
+  margin: 100px;
+}
