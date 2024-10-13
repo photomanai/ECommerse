@@ -4,6 +4,7 @@ import PageContainer from "./container/PageContainer";
 import Header from "./components/Header";
 import RouterConfig from "./config/RouterConfig";
 import Loading from "./components/Loading";
+import DrawerComponent from "./components/DrawerComponent";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Header />
           <RouterConfig />
           <Loading />
+          <DrawerComponent />
         </PageContainer>
       </div>
     </>

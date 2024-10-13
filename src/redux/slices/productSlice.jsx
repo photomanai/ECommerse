@@ -44,7 +44,6 @@ export const productSlice = createSlice({
     });
     builder.addCase(getSelectedProduct.fulfilled, (state, action) => {
       state.loading = false;
-      console.log(action);
       state.selectedProduct = action.payload;
     });
   },

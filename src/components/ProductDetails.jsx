@@ -7,6 +7,7 @@ import {
   setSelectedProduct,
 } from "../redux/slices/productSlice";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
+import { addToBasket, calcBasket } from "../redux/slices/basketSlice";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -26,20 +27,26 @@ function ProductDetails() {
     if (count > 0) setCount((prev) => prev - 1);
   };
 
-  useEffect(() => {
-    // dispatch(getAllProducts());
-    dispatch(getSelectedProduct(id));
-    // getProductById();
-  }, []);
+  const addBasket = () => {
+    if (count != 0) {
+      const payload = {
+        id,
+        price,
+        image,
+        title,
+        description,
+        count,
+      };
+      dispatch(addToBasket(payload));
+      dispatch(calcBasket());
+    } else {
+      alert("You Buying Nothing");
+    }
+  };
 
-  // const getProductById = () => {
-  //   products &&
-  //     products.map((product) => {
-  //       if (product.id == id) {
-  //         dispatch(getSelectedProduct(id));
-  //       }
-  //     });
-  // };
+  useEffect(() => {
+    dispatch(getSelectedProduct(id));
+  }, []);
 
   return (
     <div className="productdetails-c">
@@ -53,7 +60,9 @@ function ProductDetails() {
           <span>{count}</span>
           <CiCirclePlus onClick={increment} className="productdetails-icon" />
         </div>
-        <button className="button">Add Cart</button>
+        <button onClick={addBasket} className="button">
+          Add Cart
+        </button>
       </div>
     </div>
   );

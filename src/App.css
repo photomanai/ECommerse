@@ -88,3 +88,47 @@
   cursor: pointer;
   font-size: 36px;
 }
+
+.basketproductlist-c {
+  width: 450px;
+}
+
+.basketproductlist-f-c {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.basketproductlist-amount-c {
+  display: flex;
+  align-items: center;
+}
+
+.basketproductlist-amount-c h2 {
+  margin-left: 10px;
+}
+
+.basketproduct-c {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #030303;
+  border-radius: 15px;
+}
+
+.basketproduct-c button {
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+.basketproduct-t-c {
+  margin: 10px;
+}
+
+.basketproduct-t-c p:nth-child(1) {
+  font-weight: bold;
+}
